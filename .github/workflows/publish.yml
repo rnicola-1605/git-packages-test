@@ -35,6 +35,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           ecr: false
 
+
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+
       - name: Login and Push
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
@@ -49,5 +53,5 @@ jobs:
           echo $IMAGE_NAME
           echo $VERSION
 
-          docker tag testinho $IMAGE_ID:$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
