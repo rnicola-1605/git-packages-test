@@ -18,7 +18,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            rnicola-1605/git-packages-test/
+            rnicola-1605/git-packages-test
           tags: |
             type=ref,event=branch
             type=ref,event=pr
