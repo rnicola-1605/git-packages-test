@@ -40,5 +40,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: Dockerfile
-          tags: rnicola-1605/git-packages-test/git-packages-test:latest
+          tags: rnicola-1605/git-packages-test:latest
           push: true
