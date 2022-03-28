@@ -31,7 +31,7 @@ jobs:
       - name: Login to Github Packages
         uses: docker/login-action@v1
         with:
-          registry: https://ghcr.io
+          registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GIT_TOKEN_ACTIONS }}
       
@@ -41,7 +41,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=rnicola-1605/git-packages-test:latest
-          cache-to: type=inline
+          tags: rnicola-1605/git-packages-test/git-packages-test
