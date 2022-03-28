@@ -45,5 +45,9 @@ jobs:
 
           docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
 
+          echo $IMAGE_ID
+          echo $IMAGE_NAME
+          echo $VERSION
+
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
