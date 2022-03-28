@@ -18,12 +18,10 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            rnicola-1605/git-packages-test
+            rnicola-1605/git-packages-test/git-packages-test
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=sha
 
       - name: Set up Docker Buildx
         id: buildx
@@ -40,7 +38,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          pull: true
           push: true
           file: Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
