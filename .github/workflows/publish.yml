@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Logs
-        run: echo ${{ github.actor }} | echo ${{ steps.meta.outputs.tags }}
+        run: echo ${{ steps.meta.outputs.tags }}
       
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
