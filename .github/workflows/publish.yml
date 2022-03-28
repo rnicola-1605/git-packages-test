@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           ecr: false
 
-      -name: Logs
+      - name: Logs
         run: echo ${{defaultContext}} | echo {{defaultContext}}
   
       - name: Build image and push to Docker Hub and GitHub Container Registry
