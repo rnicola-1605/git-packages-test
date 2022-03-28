@@ -35,9 +35,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           ecr: false
-
-      - name: Logs
-        run: echo {{defaultContext}}
   
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
