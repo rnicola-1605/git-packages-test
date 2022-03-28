@@ -37,7 +37,7 @@ jobs:
           ecr: false
 
       - name: Logs
-        run: echo ${{defaultContext}} | echo {{defaultContext}}
+        run: echo ${{defaultContext}}
   
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
