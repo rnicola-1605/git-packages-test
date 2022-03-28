@@ -41,3 +41,4 @@ jobs:
           context: .
           file: Dockerfile
           tags: rnicola-1605/git-packages-test
+          push: true
