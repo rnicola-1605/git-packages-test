@@ -43,3 +43,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=rnicola-1605/git-packages-test:latest
+          cache-to: type=inline
+          tags: rnicola-1605/git-packages-test:latest
